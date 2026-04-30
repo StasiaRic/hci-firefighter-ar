@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCI Firefighter AR - Suche</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone scan-screen">
+    <header class="top-nav">
+      <button class="nav-icon" onclick="goToPage('index.html')" aria-label="Home">⌂</button>
+      <div class="nav-center"></div>
+      <button class="nav-icon" aria-label="Settings">⚙</button>
+    </header>
+
+    <section class="scan-content">
+      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
+
+      <div class="flashlight"></div>
+
+      <button class="primary-button scan-button" onclick="goToPage('objects.html')">
+        Weiter
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCI Firefighter AR - Objekte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone objects-screen figma-objects-screen">
+    <header class="top-nav figma-nav">
+      <button class="nav-icon-box" onclick="goToPage('index.html')" aria-label="Home">
+        <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true">
+          <path d="M3 11.5L12 4l9 7.5" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 10.5V20h11V10.5" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="nav-center-bar"></div>
+
+      <button class="nav-icon-box" aria-label="Einstellungen">
+        <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true">
+          <path d="M12 8.3A3.7 3.7 0 1 1 12 15.7A3.7 3.7 0 0 1 12 8.3Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M19.4 13.5l1.2-1.5-1.2-1.5-1.9-.3a7.2 7.2 0 0 0-.7-1.6l1.1-1.6-1.7-1.7-1.6 1.1c-.5-.3-1-.5-1.6-.7L12 3.4l-1.9.3c-.6.2-1.1.4-1.6.7L6.9 3.3 5.2 5l1.1 1.6c-.3.5-.5 1-.7 1.6l-1.9.3L2.5 12l1.2 1.5 1.9.3c.2.6.4 1.1.7 1.6L5.2 17l1.7 1.7 1.6-1.1c.5.3 1 .5 1.6.7l1.9.3 1.9-.3c.6-.2 1.1-.4 1.6-.7l1.6 1.1 1.7-1.7-1.1-1.6c.3-.5.5-1 .7-1.6l1.9-.3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <section class="objects-figma-content">
+      <div class="objects-grid">
+        <a class="object-tile" rel="ar" href="assets/models/feuerwehrlampe.usdz" aria-label="Lampe 1 in AR öffnen">
+          <img src="assets/images/lampe1.png" alt="Lampe 1" />
+        </a>
+
+        <a class="object-tile" rel="ar" href="assets/models/lamp-empty.usdz" aria-label="Lampe 2 in AR öffnen">
+          <img src="assets/images/lampe2.png" alt="Lampe 2" />
+        </a>
+
+        <a class="object-tile" rel="ar" href="assets/models/helmet-with-lamp.usdz" aria-label="Helm 1 in AR öffnen">
+          <img src="assets/images/helm1.png" alt="Helm 1" />
+        </a>
+
+        <a class="object-tile" rel="ar" href="assets/models/taschenlampe.usdz" aria-label="Helm 2 in AR öffnen">
+          <img src="assets/images/helm2.png" alt="Helm 2" />
+        </a>
+      </div>
+
+      <button class="dress-button" type="button">
+        Ausrüstung anziehen
+      </button>
+
+      <p class="ar-info">
+        Tippe auf ein Objekt, um es in AR zu öffnen.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
