@@ -547,6 +547,8 @@ body {
   body {
     display: block;
     background: #211f1f;
+    margin: 0;
+    padding: 0;
   }
 
   .phone {
@@ -555,31 +557,187 @@ body {
     box-shadow: none;
   }
 
-  .scan-content {
-    height: calc(100vh - 64px);
+  /* LOGIN SCREEN */
+  .login-screen {
+    padding-bottom: 40px;
   }
 
+  .login-button {
+    width: 280px;
+    height: 100px;
+    font-size: 32px;
+  }
+
+  /* MODALS */
+  .modal-content {
+    width: calc(100% - 20px);
+    max-width: 300px;
+  }
+
+  .modal-label {
+    font-size: 24px;
+  }
+
+  .modal-input {
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .modal-confirm {
+    width: 160px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  /* NAVIGATION */
+  .nav-icon,
+  .nav-icon-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav-svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* START AR CONTENT */
+  .start-ar-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .ar-image-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .start-ar-button {
+    width: 220px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  /* SCAN SCREEN */
+  .scan-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .scan-content h1 {
+    font-size: 18px;
+  }
+
+  .scan-button-next {
+    width: 220px;
+    height: 55px;
+    font-size: 22px;
+    bottom: 15px;
+  }
+
+  /* OBJECTS GRID */
   .objects-figma-content {
     height: calc(100vh - 64px);
-    padding: 58px 42px 24px;
+    padding: 30px 20px 20px;
+    overflow-y: auto;
   }
 
   .objects-grid {
-    column-gap: 28px;
-    row-gap: 66px;
+    column-gap: 20px;
+    row-gap: 50px;
+    grid-template-columns: 1fr 1fr;
   }
 
   .object-tile {
-    width: 108px;
-    height: 108px;
+    width: 90px;
+    height: 90px;
   }
 
   .object-tile img {
-    max-width: 124px;
-    max-height: 124px;
+    max-width: 100px;
+    max-height: 100px;
   }
 
   .dress-button {
-    margin-top: 96px;
+    width: 220px;
+    height: 55px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  /* FOUND CHARACTER SCREEN */
+  .found-character-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .found-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .found-character-image {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .speak-button {
+    width: 220px;
+    height: 65px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* CHARACTER SCREEN */
+  .character-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .character-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .character-image-container {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .character-button {
+    width: 220px;
+    height: 65px;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  /* EQUIPMENT */
+  .equipment-counter {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .equipment-showcase {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 50px;
+  }
+
+  /* BUTTONS */
+  .primary-button {
+    font-size: 18px;
+    padding: 10px 24px;
+  }
+
+  .start-ar-game-screen .login-content {
+    padding-bottom: 40px;
   }
 }
