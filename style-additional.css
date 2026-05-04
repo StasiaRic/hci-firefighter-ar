@@ -621,3 +621,219 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   font-family: 'Inter', Arial, sans-serif;
 }
+
+/* =========================================================
+   MOBILE ANPASSUNG FÜR ALLE SCREENS
+   ========================================================= */
+
+@media (max-width: 430px) {
+  /* SETTINGS/HOME MODALS */
+  .settings-modal-content,
+  .modal-content {
+    width: calc(100% - 20px);
+    max-width: 280px;
+  }
+
+  .settings-option,
+  .modal-option {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .home-modal-content {
+    width: calc(100% - 20px);
+    max-width: 220px;
+  }
+
+  /* START AR SCREEN */
+  .start-ar-screen {
+    height: calc(100vh - 64px);
+  }
+
+  .start-ar-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .ar-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ar-preview-image {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .start-ar-button {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* FOUND CHARACTER SCREEN */
+  .found-character-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .found-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .found-character-image {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+  }
+
+  .speak-button {
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* CHARACTER STORY SCREEN */
+  .story-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .story-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .story-character-image {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 15px;
+  }
+
+  /* EQUIPMENT OVERVIEW SCREEN */
+  .equipment-overview-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .equipment-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .equipment-grid-overview {
+    gap: 15px;
+    margin-bottom: 15px;
+    max-height: 100%;
+  }
+
+  .equipment-item {
+    aspect-ratio: 1;
+  }
+
+  .equipment-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* CONTINUE OR END SCREEN */
+  .choice-content {
+    height: calc(100vh - 64px);
+    padding: 40px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .choice-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choice-buttons {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .choice-button {
+    width: 220px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  /* EQUIPMENT UNLOCK SCREEN */
+  .equipment-unlock-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .unlock-title {
+    font-size: 20px;
+  }
+
+  .unlock-burst-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .equipment-unlock-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .unlock-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* EQUIPMENT COUNTER SCREEN */
+  .equipment-counter-content {
+    height: calc(100vh - 64px);
+    padding: 30px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .counter-title {
+    font-size: 20px;
+  }
+
+  .counter-burst-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .equipment-counter-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .counter-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* GAME END SCREEN */
+  .game-end-screen {
+    padding-bottom: 30px;
+    min-height: 100vh;
+  }
+
+  .game-end-content .end-button {
+    width: 240px;
+    height: 90px;
+    font-size: 28px;
+  }
+}
