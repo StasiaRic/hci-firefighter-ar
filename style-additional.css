@@ -1,0 +1,588 @@
+/* =========================================================
+   SETTINGS AND HOME MODALS
+   ========================================================= */
+
+.settings-modal,
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-modal.active,
+.modal-overlay.active {
+  display: flex;
+}
+
+.settings-modal-content,
+.modal-content {
+  background: #E8E8E8;
+  border-radius: 15px;
+  padding: 0;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.home-modal-content {
+  width: 240px;
+}
+
+.settings-option,
+.modal-option {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-bottom: 1px solid #C4C4C4;
+  background: #E8E8E8;
+  color: #000;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: 'Inter', Arial, sans-serif;
+  transition: background 0.2s ease;
+}
+
+.settings-option:last-child,
+.modal-option:last-child {
+  border-bottom: none;
+}
+
+.settings-option:hover,
+.modal-option:hover {
+  background: #D0D0D0;
+}
+
+.settings-option:active,
+.modal-option:active {
+  background: #C0C0C0;
+}
+
+.modal-option-end {
+  color: #FF3B30;
+  font-weight: 500;
+}
+
+/* =========================================================
+   START AR-GAME SCREEN
+   ========================================================= */
+
+.start-ar-screen {
+  background: #211f1f;
+}
+
+.start-ar-content {
+  height: calc(852px - 64px);
+  padding: 60px 46px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ar-prompt-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ar-image-container {
+  width: 200px;
+  height: 200px;
+  background: rgba(87, 87, 87, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ar-preview-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.start-ar-button {
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   FOUND CHARACTER SCREEN
+   ========================================================= */
+
+.found-character-screen {
+  background: #211f1f;
+}
+
+.found-character-content {
+  height: calc(852px - 64px);
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.found-title {
+  font-size: 28px;
+  line-height: 1.3;
+  color: white;
+  text-align: center;
+  margin: 0 0 80px 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.found-character-image {
+  width: 300px;
+  height: 300px;
+  background: rgba(87, 87, 87, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.found-character-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.speak-button {
+  width: 301px;
+  height: 87px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   CHARACTER STORY SCREEN
+   ========================================================= */
+
+.character-story-screen {
+  background: #211f1f;
+}
+
+.story-content {
+  height: calc(852px - 64px);
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.story-text {
+  font-size: 24px;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  margin: 0 0 60px 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.story-character-image {
+  width: 280px;
+  height: 280px;
+  background: rgba(87, 87, 87, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.story-character-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================================
+   EQUIPMENT OVERVIEW SCREEN
+   ========================================================= */
+
+.equipment-overview-screen {
+  background: #211f1f;
+}
+
+.equipment-overview-content {
+  height: calc(852px - 64px);
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipment-title {
+  font-size: 28px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 0 0 40px 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.equipment-grid-overview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex: 1;
+}
+
+.equipment-item {
+  width: 100%;
+  aspect-ratio: 1;
+  background: rgba(87, 87, 87, 0.3);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equipment-item img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.equipment-button {
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   CONTINUE OR END SCREEN
+   ========================================================= */
+
+.continue-or-end-screen {
+  background: #211f1f;
+}
+
+.choice-content {
+  height: calc(852px - 64px);
+  padding: 80px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 0 0 80px 0;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  align-items: center;
+}
+
+.choice-button {
+  width: 280px;
+  height: 80px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  color: white;
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.continue-button {
+  background: rgba(100, 200, 100, 0.4);
+}
+
+.continue-button:hover {
+  background: rgba(100, 200, 100, 0.6);
+  transform: scale(1.02);
+}
+
+.end-button {
+  background: rgba(217, 217, 217, 0.4);
+}
+
+.end-button:hover {
+  background: rgba(217, 217, 217, 0.6);
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   EQUIPMENT UNLOCK SCREEN (Golden Burst)
+   ========================================================= */
+
+.equipment-unlock-screen {
+  background: #211f1f;
+}
+
+.equipment-unlock-content {
+  height: calc(852px - 64px);
+  padding: 60px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.unlock-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.unlock-burst-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.golden-burst {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.8) 0%,
+    rgba(255, 185, 0, 0.6) 20%,
+    rgba(255, 140, 0, 0.4) 40%,
+    rgba(255, 100, 0, 0.2) 60%,
+    transparent 80%
+  );
+  animation: burst-pulse 2s ease-in-out infinite;
+}
+
+.golden-burst::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  background:
+    linear-gradient(0deg, transparent 48%, rgba(255, 215, 0, 0.6) 49%, rgba(255, 215, 0, 0.6) 51%, transparent 52%),
+    linear-gradient(45deg, transparent 48%, rgba(255, 185, 0, 0.5) 49%, rgba(255, 185, 0, 0.5) 51%, transparent 52%),
+    linear-gradient(90deg, transparent 48%, rgba(255, 215, 0, 0.6) 49%, rgba(255, 215, 0, 0.6) 51%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(255, 185, 0, 0.5) 49%, rgba(255, 185, 0, 0.5) 51%, transparent 52%);
+  animation: burst-rotate 4s linear infinite;
+}
+
+@keyframes burst-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes burst-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.equipment-unlock-image {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(87, 87, 87, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+.equipment-unlock-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+}
+
+.unlock-button {
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   EQUIPMENT COUNTER SCREEN
+   ========================================================= */
+
+.equipment-counter-screen {
+  background: #211f1f;
+}
+
+.equipment-counter-content {
+  height: calc(852px - 64px);
+  padding: 60px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.counter-burst-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipment-counter-image {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(87, 87, 87, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+.equipment-counter-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+}
+
+.counter-button {
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   GAME END SCREEN
+   ========================================================= */
+
+.game-end-screen {
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.55)),
+    url("assets/images/starthintergrund.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-end-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-button {
+  width: 325px;
+  height: 134px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 40px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  font-family: 'Inter', Arial, sans-serif;
+}

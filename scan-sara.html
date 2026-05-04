@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCI Firefighter AR - Suche</title>
+  <title>HCI Firefighter AR - Suche Sara</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-additional.css" />
 </head>
@@ -23,6 +23,16 @@
       </button>
     </header>
 
+    <section class="scan-content">
+      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
+
+      <div class="flashlight"></div>
+
+      <button class="scan-button-next" onclick="goToPage('found-sara.html')">
+        Weiter
+      </button>
+    </section>
+
     <!-- Home Modal -->
     <div id="homeModal" class="modal-overlay" onclick="closeHomeModal()">
       <div class="modal-content" onclick="event.stopPropagation()">
@@ -38,16 +48,6 @@
         <button class="modal-option" onclick="goToPage('equipment-overview.html')">Inventar</button>
       </div>
     </div>
-
-    <section class="scan-content">
-      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
-
-      <div class="flashlight"></div>
-
-      <button class="scan-button-next" onclick="goToPage('found-character.html')">
-        Weiter
-      </button>
-    </section>
   </main>
 
   <script src="script.js"></script>

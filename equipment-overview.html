@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCI Firefighter AR - Suche</title>
+  <title>HCI Firefighter AR - Ausrüstungsübersicht</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-additional.css" />
 </head>
 <body>
-  <main class="phone scan-screen">
+  <main class="phone equipment-overview-screen">
     <header class="top-nav figma-nav">
       <button class="nav-icon-box" onclick="showHomeModal()" aria-label="Home">
         <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true" fill="currentColor">
@@ -22,6 +22,29 @@
         </svg>
       </button>
     </header>
+
+    <section class="equipment-overview-content">
+      <h1 class="equipment-title" id="overviewTitle">Deine Ausrüstung</h1>
+      
+      <div class="equipment-grid-overview">
+        <div class="equipment-item" id="item1">
+          <img src="assets/images/lampe1.png" alt="Lampe 1" />
+        </div>
+        <div class="equipment-item" id="item2">
+          <img src="assets/images/lampe2.png" alt="Lampe 2" />
+        </div>
+        <div class="equipment-item" id="item3">
+          <img src="assets/images/helm1.png" alt="Helm 1" />
+        </div>
+        <div class="equipment-item" id="item4">
+          <img src="assets/images/helm2.png" alt="Helm 2" />
+        </div>
+      </div>
+
+      <button class="equipment-button" onclick="goToPage('game-end.html')">
+        Spiel beenden
+      </button>
+    </section>
 
     <!-- Home Modal -->
     <div id="homeModal" class="modal-overlay" onclick="closeHomeModal()">
@@ -38,18 +61,22 @@
         <button class="modal-option" onclick="goToPage('equipment-overview.html')">Inventar</button>
       </div>
     </div>
-
-    <section class="scan-content">
-      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
-
-      <div class="flashlight"></div>
-
-      <button class="scan-button-next" onclick="goToPage('found-character.html')">
-        Weiter
-      </button>
-    </section>
   </main>
 
   <script src="script.js"></script>
+  <script>
+    // Show only collected items based on localStorage
+    const count = parseInt(localStorage.getItem('equipmentCount') || '1');
+    document.getElementById('overviewTitle').textContent = `Deine ${count} Ausrüstungsgegenstände`;
+    
+    // Hide items not yet collected
+    for (let i = count + 1; i <= 4; i++) {
+      const item = document.getElementById(`item${i}`);
+      if (item) {
+        item.style.opacity = '0.3';
+        item.style.filter = 'grayscale(100%)';
+      }
+    }
+  </script>
 </body>
 </html>

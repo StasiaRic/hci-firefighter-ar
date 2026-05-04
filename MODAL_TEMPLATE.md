@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCI Firefighter AR - Suche</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style-additional.css" />
-</head>
-<body>
-  <main class="phone scan-screen">
+# Standard Modal Template für alle Screens
+
+## Navigation Header (Zeilen 12-26):
+```html
     <header class="top-nav figma-nav">
       <button class="nav-icon-box" onclick="showHomeModal()" aria-label="Home">
         <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true" fill="currentColor">
@@ -22,34 +15,38 @@
         </svg>
       </button>
     </header>
+```
 
+## Modals (vor </main>):
+```html
     <!-- Home Modal -->
-    <div id="homeModal" class="modal-overlay" onclick="closeHomeModal()">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <button class="modal-option" onclick="closeHomeModal()">Fortsetzen</button>
-        <button class="modal-option modal-option-end" onclick="goToPage('game-end.html')">Beenden</button>
+    <div id="homeModal" class="settings-modal">
+      <div class="settings-modal-content home-modal-content">
+        <button class="settings-option" onclick="closeHomeModal()">Fortsetzen</button>
+        <button class="settings-option" onclick="goToPage('equipment-overview.html')">Beenden</button>
       </div>
     </div>
 
     <!-- Settings Modal -->
-    <div id="settingsModal" class="modal-overlay" onclick="closeSettingsModal()">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <button class="modal-option" onclick="closeSettingsModal()">Schliessen</button>
-        <button class="modal-option" onclick="goToPage('equipment-overview.html')">Inventar</button>
+    <div id="settingsModal" class="settings-modal">
+      <div class="settings-modal-content">
+        <button class="settings-option" onclick="closeSettingsModal()">Schliessen</button>
+        <button class="settings-option" onclick="goToPage('equipment-overview.html')">Inventar</button>
       </div>
     </div>
+```
 
-    <section class="scan-content">
-      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
+## Dateien die noch aktualisiert werden müssen:
+- equipment-unlock.html
+- equipment-counter.html
+- continue-or-end.html
+- scan-sara.html
+- found-sara.html
+- sara-story.html
+- equipment-overview.html
 
-      <div class="flashlight"></div>
-
-      <button class="scan-button-next" onclick="goToPage('found-character.html')">
-        Weiter
-      </button>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+## Bereits aktualisiert:
+✅ start-ar.html
+✅ scan.html
+✅ found-character.html
+✅ character-story.html
