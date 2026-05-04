@@ -28,16 +28,24 @@
       
       <div class="equipment-grid-overview">
         <div class="equipment-item" id="item1">
-          <img src="assets/images/lampe1.png" alt="Lampe 1" />
+          <a href="assets/models/feuerwehrlampe.usdz" rel="ar">
+            <img src="assets/images/lampe1.png" alt="Lampe 1" />
+          </a>
         </div>
         <div class="equipment-item" id="item2">
-          <img src="assets/images/lampe2.png" alt="Lampe 2" />
+          <a href="assets/models/taschenlampe.usdz" rel="ar">
+            <img src="assets/images/lampe2.png" alt="Lampe 2" />
+          </a>
         </div>
         <div class="equipment-item" id="item3">
-          <img src="assets/images/helm1.png" alt="Helm 1" />
+          <a href="assets/models/helmet-with-lamp.usdz" rel="ar">
+            <img src="assets/images/helm1.png" alt="Helm 1" />
+          </a>
         </div>
         <div class="equipment-item" id="item4">
-          <img src="assets/images/helm2.png" alt="Helm 2" />
+          <a href="assets/models/lamp-empty.usdz" rel="ar">
+            <img src="assets/images/helm2.png" alt="Helm 2" />
+          </a>
         </div>
       </div>
 
@@ -65,16 +73,52 @@
 
   <script src="script.js"></script>
   <script>
+    // Model mapping for both iOS (USDZ) and Android (GLB)
+    const models = {
+      '1': { usdz: 'assets/models/feuerwehrlampe.usdz', glb: 'assets/models/feuerwehrlampe.glb' },
+      '2': { usdz: 'assets/models/taschenlampe.usdz', glb: 'assets/models/taschenlampe.glb' },
+      '3': { usdz: 'assets/models/helmet-with-lamp.usdz', glb: 'assets/models/helmet-with-lamp.glb' },
+      '4': { usdz: 'assets/models/lamp-empty.usdz', glb: 'assets/models/lamp-empty.glb' }
+    };
+
+    // Detect platform and update AR links
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    // Update AR links based on platform
+    for (let i = 1; i <= 4; i++) {
+      const item = document.getElementById(`item${i}`);
+      if (item) {
+        const arLink = item.querySelector('a[rel="ar"]');
+        if (arLink && models[i]) {
+          if (isAndroid && models[i].glb) {
+            // Android: Use GLB with Scene Viewer
+            arLink.href = models[i].glb;
+            arLink.setAttribute('rel', 'ar');
+          } else if (isIOS && models[i].usdz) {
+            // iOS: Use USDZ (already set, but ensure it's correct)
+            arLink.href = models[i].usdz;
+            arLink.setAttribute('rel', 'ar');
+          }
+        }
+      }
+    }
+
     // Show only collected items based on localStorage
     const count = parseInt(localStorage.getItem('equipmentCount') || '1');
     document.getElementById('overviewTitle').textContent = `Deine ${count} Ausrüstungsgegenstände`;
     
-    // Hide items not yet collected
+    // Hide items not yet collected and disable AR links
     for (let i = count + 1; i <= 4; i++) {
       const item = document.getElementById(`item${i}`);
       if (item) {
         item.style.opacity = '0.3';
         item.style.filter = 'grayscale(100%)';
+        // Disable AR link for locked items
+        const arLink = item.querySelector('a[rel="ar"]');
+        if (arLink) {
+          arLink.style.pointerEvents = 'none';
+        }
       }
     }
   </script>
