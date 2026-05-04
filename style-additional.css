@@ -80,18 +80,20 @@
 
 .start-ar-content {
   height: calc(852px - 64px);
-  padding: 60px 46px 28px;
+  padding: 40px 46px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .ar-prompt-area {
-  flex: 1;
+  flex: 0 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 20px 0;
 }
 
 .ar-image-container {
@@ -122,6 +124,8 @@
   cursor: pointer;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
   font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
@@ -138,30 +142,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .found-title {
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.3;
   color: white;
   text-align: center;
-  margin: 0 0 80px 0;
+  margin: 0 0 30px 0;
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 400;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .found-character-image {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   background: rgba(87, 87, 87, 0.2);
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   overflow: hidden;
+  flex-shrink: 1;
 }
 
 .found-character-image img {
@@ -185,6 +191,7 @@
   /* Ensure button stays visible */
   flex-shrink: 0;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
@@ -253,24 +260,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .equipment-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
   color: white;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
   font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
 }
 
 .equipment-grid-overview {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 60px;
-  flex: 1;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex: 0 1 auto;
+  max-height: 500px;
 }
 
 .equipment-item {
@@ -302,6 +312,8 @@
   cursor: pointer;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
   font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
@@ -314,29 +326,32 @@
 
 .choice-content {
   height: calc(852px - 64px);
-  padding: 80px 28px 28px;
+  padding: 60px 28px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .choice-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   color: white;
   text-align: center;
-  margin: 0 0 80px 0;
+  margin: 0 0 40px 0;
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.3;
+  flex-shrink: 0;
 }
 
 .choice-buttons {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
   width: 100%;
   align-items: center;
+  flex-shrink: 0;
+  margin-bottom: 20px;
 }
 
 .choice-button {
@@ -381,7 +396,7 @@
 
 .equipment-unlock-content {
   height: calc(852px - 64px);
-  padding: 60px 28px 28px;
+  padding: 40px 28px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -389,22 +404,24 @@
 }
 
 .unlock-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   color: white;
   text-align: center;
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.3;
+  flex-shrink: 0;
 }
 
 .unlock-burst-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 1;
 }
 
 .golden-burst {
@@ -461,8 +478,8 @@
 .equipment-unlock-image {
   position: relative;
   z-index: 2;
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,6 +507,8 @@
   cursor: pointer;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
   font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
@@ -502,7 +521,7 @@
 
 .equipment-counter-content {
   height: calc(852px - 64px);
-  padding: 60px 28px 28px;
+  padding: 40px 28px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -510,29 +529,31 @@
 }
 
 .counter-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   color: white;
   text-align: center;
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
   line-height: 1.3;
+  flex-shrink: 0;
 }
 
 .counter-burst-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 1;
 }
 
 .equipment-counter-image {
   position: relative;
   z-index: 2;
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -560,6 +581,8 @@
   cursor: pointer;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
   font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
@@ -574,7 +597,9 @@
   background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  min-height: 100vh;
 }
 
 .game-end-content {
