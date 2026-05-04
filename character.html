@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCI Firefighter AR - Suche</title>
+  <title>HCI Firefighter AR - Charakter</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style-additional.css" />
 </head>
 <body>
-  <main class="phone scan-screen">
+  <main class="phone character-screen figma-character-screen">
     <header class="top-nav figma-nav">
       <button class="nav-icon-box" onclick="showHomeModal()" aria-label="Home">
         <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true" fill="currentColor">
@@ -39,13 +38,19 @@
       </div>
     </div>
 
-    <section class="scan-content">
-      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
+    <section class="character-content">
+      <div class="character-story">
+        <p class="character-text">
+          Hallo, ich bin Bob, 23 Jahre Feuerwehrmann in St. Gallen. In einer Nacht war alles vom Rauch verschluckt, und ohne diese Lampe hätte ich den Weg nie gefunden. Ihr Licht hat Leben gerettet - Heute gehört sie dir.
+        </p>
+        
+        <div class="character-image-container">
+          <img src="assets/images/lampe1.png" alt="Bob - Feuerwehrmann" class="character-image" />
+        </div>
+      </div>
 
-      <div class="flashlight"></div>
-
-      <button class="scan-button-next" onclick="goToPage('found-character.html')">
-        Weiter
+      <button class="character-button" onclick="goToPage('objects.html')">
+        Mit Bob sprechen
       </button>
     </section>
   </main>

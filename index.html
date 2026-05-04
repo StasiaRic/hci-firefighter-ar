@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HCI Firefighter AR - Start</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-additional.css" />
 </head>
 <body>
   <main class="phone login-screen">
     <div class="login-content">
-      <button class="glass-button" onclick="goToPage('scan.html')">
+      <button class="login-button" onclick="showNameModal()">
         Login
       </button>
+    </div>
+
+    <!-- Name Input Modal -->
+    <div id="nameModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="modal-close" onclick="closeNameModal()">✕</button>
+        </div>
+        <label class="modal-label">Name:</label>
+        <input type="text" id="nameInput" class="modal-input" placeholder="" />
+        <button class="modal-confirm" onclick="confirmName()">Confirm</button>
+      </div>
     </div>
   </main>
 

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HCI Firefighter AR - Suche</title>
+  <title>HCI Firefighter AR - Neue Ausrüstung</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style-additional.css" />
 </head>
 <body>
-  <main class="phone scan-screen">
+  <main class="phone equipment-unlock-screen">
     <header class="top-nav figma-nav">
       <button class="nav-icon-box" onclick="showHomeModal()" aria-label="Home">
         <svg viewBox="0 0 24 24" class="nav-svg" aria-hidden="true" fill="currentColor">
@@ -22,6 +22,21 @@
         </svg>
       </button>
     </header>
+
+    <section class="equipment-unlock-content">
+      <h1 class="unlock-title">Neue Ausrüstung<br>freigeschaltet</h1>
+      
+      <div class="unlock-burst-container">
+        <div class="golden-burst"></div>
+        <div class="equipment-unlock-image">
+          <img src="assets/images/lampe1.png" alt="Neue Ausrüstung" id="equipmentImage" />
+        </div>
+      </div>
+
+      <button class="unlock-button" onclick="goToNextScreen()">
+        Weiter
+      </button>
+    </section>
 
     <!-- Home Modal -->
     <div id="homeModal" class="modal-overlay" onclick="closeHomeModal()">
@@ -38,18 +53,31 @@
         <button class="modal-option" onclick="goToPage('equipment-overview.html')">Inventar</button>
       </div>
     </div>
-
-    <section class="scan-content">
-      <h1>Nutze deine Lampe um Einsatzkräfte im Raum zu finden</h1>
-
-      <div class="flashlight"></div>
-
-      <button class="scan-button-next" onclick="goToPage('found-character.html')">
-        Weiter
-      </button>
-    </section>
   </main>
 
   <script src="script.js"></script>
+  <script>
+    // Determine which item to show based on URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemNumber = urlParams.get('item') || '1';
+    
+    // Map of items to images
+    const itemImages = {
+      '1': 'assets/images/lampe1.png',
+      '2': 'assets/images/lampe2.png',
+      '3': 'assets/images/helm1.png',
+      '4': 'assets/images/helm2.png'
+    };
+    
+    // Update the image
+    const img = document.getElementById('equipmentImage');
+    if (img && itemImages[itemNumber]) {
+      img.src = itemImages[itemNumber];
+    }
+    
+    function goToNextScreen() {
+      window.location.href = `equipment-counter.html?count=${itemNumber}`;
+    }
+  </script>
 </body>
 </html>

@@ -40,8 +40,9 @@ body {
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   padding-bottom: 78px;
 }
 
@@ -51,17 +52,143 @@ body {
   justify-content: center;
 }
 
-.glass-button {
-  width: 225px;
-  height: 92px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(35, 35, 35, 0.62);
+.login-button {
+  width: 325px;
+  height: 134px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(217, 217, 217, 0.4);
   color: white;
-  font-size: 28px;
+  font-size: 40px;
+  font-weight: 400;
   cursor: pointer;
-  backdrop-filter: blur(7px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* =========================================================
+   START AR-GAME SCREEN (with top navigation)
+   ========================================================= */
+
+.start-ar-game-screen {
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.55)),
+    url("assets/images/starthintergrund.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.start-ar-game-screen .login-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 78px;
+}
+
+/* =========================================================
+   MODAL POPUP (NAME INPUT)
+   ========================================================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  width: 340px;
+  background: #E8E8E8;
+  border-radius: 20px;
+  padding: 15px 25px 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.modal-close {
+  background: #C4C4C4;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.modal-label {
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 25px;
+  font-family: 'Inter', Arial, sans-serif;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-input {
+  width: 100%;
+  height: 55px;
+  background: #C4C4C4;
+  border: none;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 35px;
+  font-family: 'Inter', Arial, sans-serif;
+  outline: none;
+}
+
+.modal-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-confirm {
+  width: 200px;
+  height: 55px;
+  background: #C4C4C4;
+  border: none;
+  border-radius: 14px;
+  font-size: 26px;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Inter', Arial, sans-serif;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal-confirm:hover {
+  background: #B0B0B0;
 }
 
 /* =========================================================
@@ -72,8 +199,7 @@ body {
 .figma-nav {
   width: 100%;
   height: 64px;
-  display: grid;
-  grid-template-columns: 66px 1fr 66px;
+  display: flex;
   align-items: stretch;
   background: transparent;
   position: relative;
@@ -97,6 +223,7 @@ body {
 
 .nav-center,
 .nav-center-bar {
+  flex: 1;
   height: 64px;
   background: rgba(104, 100, 100, 0.72);
 }
@@ -105,6 +232,39 @@ body {
   width: 34px;
   height: 34px;
   color: #000;
+}
+
+/* Bottom Navigation (for screens without top nav) */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.bottom-nav-icon {
+  width: 60px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.bottom-nav-icon .nav-svg {
+  color: #fff;
 }
 
 /* =========================================================
@@ -168,13 +328,22 @@ body {
     0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
-.scan-button {
+.scan-button-next {
   position: absolute;
   left: 50%;
   bottom: 48px;
   transform: translateX(-50%);
-  width: 210px;
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+  cursor: pointer;
   z-index: 4;
+  font-family: 'Inter', Arial, sans-serif;
 }
 
 /* =========================================================
@@ -234,19 +403,17 @@ body {
 
 /* Button unten wie im Figma-Screen */
 .dress-button {
-  margin-top: 105px;
-  width: 238px;
-  height: 56px;
-  border-radius: 28px;
-  border: 1.8px solid #050505;
-  background: linear-gradient(#9d9d9d, #7d7d7d);
+  width: 261px;
+  height: 67px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   cursor: pointer;
-  box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.35),
-    0 2px 4px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
 }
 
 /* Hinweis kleiner machen, damit es nicht wie Hauptinhalt wirkt */
@@ -257,6 +424,102 @@ body {
   line-height: 1.35;
   color: rgba(255, 255, 255, 0.72);
   text-align: center;
+}
+
+/* =========================================================
+   EQUIPMENT/AUSRÜSTUNG SCREEN
+   ========================================================= */
+
+.equipment-counter {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.equipment-showcase {
+  width: 242px;
+  height: 242px;
+  margin: 0 auto 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(87, 87, 87, 0.3);
+  border-radius: 14px;
+}
+
+.equipment-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================================\n   CHARACTER/STORY SCREEN\n   ========================================================= */
+
+.character-screen {
+  background: #211f1f;
+}
+
+.character-content {
+  height: calc(852px - 64px);
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.character-story {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.character-text {
+  font-size: 24px;
+  line-height: 1.4;
+  color: white;
+  text-align: center;
+  margin: 0 0 40px 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.character-image-container {
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(87, 87, 87, 0.2);
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.character-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.character-button {
+  width: 301px;
+  height: 87px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: rgba(217, 217, 217, 0.4);
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.45);
+  font-family: 'Inter', Arial, sans-serif;
 }
 
 /* =========================================================
